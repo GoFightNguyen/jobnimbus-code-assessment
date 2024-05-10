@@ -7,15 +7,24 @@ namespace AssessmentTests;
 public class MatchersTest
 {
   [TestMethod]
-  public void HasMatchingBrackets_ReturnsTrue_WhenEmptyString()
+  [DataRow("")]
+  [DataRow("abc")]
+  [DataRow("abc def")]
+  public void HasMatchingBrackets_ReturnsTrue_WhenThereAreNoBrackets(string val)
   {
-    Assert.IsTrue(Matchers.HasMatchingBrackets(""));
+    Assert.IsTrue(Matchers.HasMatchingBrackets(val));
   }
 
   [TestMethod]
-  public void HasMatchingBrackets_ReturnsTrue_WhenThereIsOnlyAnOpeningBracketFollowedByAClosingBracket()
+  [DataRow("<>")]
+  [DataRow("<abc>")]
+  [DataRow("ab<c>")]
+  [DataRow("a<b>c")]
+  [DataRow("<>abc")]
+  [DataRow("abc<>")]
+  public void HasMatchingBrackets_ReturnsTrue_WhenThereIsOneBracketPair(string val)
   {
-    Assert.IsTrue(Matchers.HasMatchingBrackets("<>"));
+    Assert.IsTrue(Matchers.HasMatchingBrackets(val));
   }
 
   [TestMethod]
