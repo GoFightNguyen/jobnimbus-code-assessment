@@ -11,3 +11,8 @@ Potential Test strings and expected results:
 - `<<>` - False (one bracket pair was not closed)
 - `“”` - True. (no brackets in the string will return True)
 - `<abc...xyz>` - True (non-bracket characters are ignored appropriately)
+
+## Getting Started
+
+A [development container](https://containers.dev/) is used to isolate the development environment.
+It includes dotnet 8.
