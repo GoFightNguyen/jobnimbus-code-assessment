@@ -11,4 +11,10 @@ public class MatchersTest
   {
     Assert.IsTrue(Matchers.HasMatchingBrackets(""));
   }
+
+  [TestMethod]
+  public void HasMatchingBrackets_ReturnsTrue_WhenThereIsOnlyAnOpeningBracketFollowedByAClosingBracket()
+  {
+    Assert.IsTrue(Matchers.HasMatchingBrackets("<>"));
+  }
 }
