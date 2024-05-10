@@ -23,4 +23,10 @@ public class MatchersTest
   {
     Assert.IsFalse(Matchers.HasMatchingBrackets("><"));
   }
+
+  [TestMethod]
+  public void HasMatchingBrackets_ReturnsFalse_WhenThereIsNotACorrespondingClosingBracketForEveryOpenBracket()
+  {
+    Assert.IsFalse(Matchers.HasMatchingBrackets("<<>"));
+  }
 }
