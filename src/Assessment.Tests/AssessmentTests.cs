@@ -1,10 +1,14 @@
-namespace Assessment.Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Assessment;
+
+namespace AssessmentTests;
 
 [TestClass]
-public class AssessmentTest
+public class MatchersTest
 {
-    [TestMethod]
-    public void TestMethod1()
-    {
-    }
+  [TestMethod]
+  public void HasMatchingBrackets_ReturnsTrue_WhenEmptyString()
+  {
+    Assert.IsTrue(Matchers.HasMatchingBrackets(""));
+  }
 }
