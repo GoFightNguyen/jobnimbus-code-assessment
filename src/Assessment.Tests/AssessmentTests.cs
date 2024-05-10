@@ -38,8 +38,13 @@ public class MatchersTest
   }
 
   [TestMethod]
-  public void HasMatchingBrackets_ReturnsFalse_WhenThereIsNotACorrespondingClosingBracketForEveryOpenBracket()
+  [DataRow("<")]
+  [DataRow("<<>")]
+  [DataRow("<>>")]
+  [DataRow("<a>b>")]
+  [DataRow("b>")]
+  public void HasMatchingBrackets_ReturnsFalse_WhenThereIsNotACorrespondingClosingBracketForEveryOpenBracket(string val)
   {
-    Assert.IsFalse(Matchers.HasMatchingBrackets("<<>"));
+    Assert.IsFalse(Matchers.HasMatchingBrackets(val));
   }
 }
