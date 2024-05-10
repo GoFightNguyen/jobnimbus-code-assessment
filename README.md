@@ -16,3 +16,8 @@ Potential Test strings and expected results:
 
 A [development container](https://containers.dev/) is used to isolate the development environment.
 It includes dotnet 8.
+
+Whether or not you decide to develop in the devcontainer,
+follow these steps:
+1. `cd ./src`
+2. `dotnet test`
