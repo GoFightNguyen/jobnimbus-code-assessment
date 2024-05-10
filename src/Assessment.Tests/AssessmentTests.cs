@@ -22,7 +22,11 @@ public class MatchersTest
   [DataRow("a<b>c")]
   [DataRow("<>abc")]
   [DataRow("abc<>")]
-  public void HasMatchingBrackets_ReturnsTrue_WhenThereIsOneBracketPair(string val)
+  [DataRow("<<>>")]
+  [DataRow("<><>")]
+  [DataRow("<>abc<>")]
+  [DataRow("<abc<def>>")]
+  public void HasMatchingBrackets_ReturnsTrue_WhenAllBracketPairsAreProperlyOpenedAndClosed(string val)
   {
     Assert.IsTrue(Matchers.HasMatchingBrackets(val));
   }
