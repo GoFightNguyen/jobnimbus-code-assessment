@@ -17,9 +17,6 @@ public static class Matchers
 
     return sum == 0;
 
-    string KeepOnlyBrackets()
-    {
-      return Regex.Replace(val, "[^<>]", "");
-    }
+    string KeepOnlyBrackets() => Regex.Replace(val, "[^<>]", "");
   }
 }
