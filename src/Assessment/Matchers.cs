@@ -4,10 +4,19 @@ public static class Matchers
 {
   public static bool HasMatchingBrackets(string val)
   {
-    if (val.StartsWith(">")) return false;
+    var sum = 0;
 
-    var numOfOpeningBrackets = val.Count(c => c == '<');
-    var numOfClosingBrackets = val.Count(c => c == '>');
-    return numOfOpeningBrackets == numOfClosingBrackets;
+    foreach (var c in val)
+    {
+      if (c == '<')
+        sum++;
+      else if (c == '>')
+        sum--;
+
+      if (sum < 0)
+        return false;
+    }
+
+    return sum == 0;
   }
 }

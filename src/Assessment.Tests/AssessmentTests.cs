@@ -31,9 +31,11 @@ public class MatchersTest
   }
 
   [TestMethod]
-  public void HasMatchingBrackets_ReturnsFalse_WhenThereIsOnlyAClosingBracketFollowedByAnOpeningBracket()
+  [DataRow("><")]
+  [DataRow("a><")]
+  public void HasMatchingBrackets_ReturnsFalse_WhenBracketsAreOutOfOrder(string val)
   {
-    Assert.IsFalse(Matchers.HasMatchingBrackets("><"));
+    Assert.IsFalse(Matchers.HasMatchingBrackets(val));
   }
 
   [TestMethod]
