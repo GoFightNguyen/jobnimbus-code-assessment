@@ -4,6 +4,6 @@ public static class Matchers
 {
   public static bool HasMatchingBrackets(string val)
   {
-    return true;
+    return !val.StartsWith(">");
   }
 }
