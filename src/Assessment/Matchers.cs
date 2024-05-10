@@ -12,7 +12,7 @@ public static class Matchers
     {
       sum += c == '<' ? 1 : -1;
       if (sum < 0)
-        return false;
+        break;
     }
 
     return sum == 0;
